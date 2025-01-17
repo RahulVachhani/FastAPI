@@ -61,7 +61,16 @@
             </div>
             <div class="mb-3">
                 <label for="desc" class="form-label">Description</label>
-                <input type="text" class="form-control" desc="desc">
+                <input type="text" class="form-control" name="desc">
+            </div>
+
+            <div class="mb-3 form-check">
+                <!-- Hidden input for default "false" value -->
+                <input type="hidden" name="important" value="false">
+
+                <!-- Checkbox for "true" value when checked -->
+                <input type="checkbox" class="form-check-input" name="important" value="true"> <label
+                    class="form-check-label" for="important">Check me out</label>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -70,9 +79,13 @@
 
     <div class="container">
         <h2>Your notes</h2>
+        {% if Docs %}
         {% for item in Docs %}
-        <li> {{item.note}} </li>
+        <li> {{item.title}} || {{item.desc}} || {{item.important}} </li>
         {% endfor %}
+        {% else %}
+        Nothing to display
+        {% endif %}
     </div>
 
 
