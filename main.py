@@ -12,7 +12,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
-conn = MongoClient("mongodb+srv://Rahul:123%40Rahul@fastapi.k9cht.mongodb.net/")
+conn = MongoClient("mongodb+srv://Rahul:******@fastapi.k9cht.mongodb.net/")
 
 # @app.get("/")
 # def read_root():
